@@ -6,6 +6,8 @@ import Footer from './footer/footer';
 import Description from '../description/Description';
 import { useState } from 'react';
 
+import styles from './layout.module.scss';
+
 const Layout = ({ children, descriptionText }: LayoutProps) => {
   const currentRoute = useRouter().pathname;
   const { title, metaContents } = getMetaData(currentRoute);
@@ -28,7 +30,7 @@ const Layout = ({ children, descriptionText }: LayoutProps) => {
           setCurrentHeight(hight);
         }}
       />
-      <div className="layout__container layout__body--container">{children}</div>
+      <div className={styles.layout__container}>{children}</div>
       <Footer />
     </div>
   );
